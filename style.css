@@ -12,9 +12,9 @@ body {
   font-size: 14px;
 }
 
-.container{
-    max-width: 1920px;
-    margin: 0 auto;
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -23,7 +23,7 @@ body {
   display: grid;
   grid-template-rows: max-content;
   grid-template-columns: 1fr 1fr 100px;
-  grid-template-areas: 'logo nav search';
+  grid-template-areas: "logo nav search";
 
   align-items: center;
   justify-items: start;
@@ -33,14 +33,14 @@ body {
 
   /* background-color: rgb(119, 217, 119); */
   overflow: hidden;
-/*! A way better */
+  /*! A way better */
   /* grid-template:'logo nav search' max-content/ 1fr 1fr 100px; */
 }
 
 .logo {
   font-family: "Secular One", serif;
   font-weight: 400;
-  color: #FF4747;
+  color: #ff4747;
   font-size: 24px;
   width: 150px;
   line-height: 1;
@@ -52,38 +52,37 @@ body {
 
 .header__nav {
   grid-area: nav;
-
 }
 
-.header__nav ul{
+.header__nav ul {
   display: flex;
   gap: 10px;
 }
 
-.header__nav a{
+.header__nav a {
   padding: 15px;
   transition: color 0.2s;
 
   position: relative;
   display: inline-block;
-  
 }
 
-.header__nav a:hover, .logo:hover{
-  color: #01BCB5;
+.header__nav a:hover,
+.logo:hover {
+  color: #01bcb5;
 }
 
-.header__nav a:active{
-  color: #01928D;
+.header__nav a:active {
+  color: #01928d;
 }
 
-.header__nav a::after{
-  content: '';
+.header__nav a::after {
+  content: "";
   display: block;
   width: 80%;
   height: 100%;
 
-  background-color: #01BCB5;
+  background-color: #01bcb5;
 
   position: absolute;
   left: 15px;
@@ -92,25 +91,178 @@ body {
   transition: bottom 0.5s, background-color 0.2s;
 }
 
-.header__nav a:hover::after{
+.header__nav a:hover::after {
   bottom: -80%;
 }
 
-.header__nav a:active::after{
-  background-color: #01928D;
+.header__nav a:active::after {
+  background-color: #01928d;
 }
 
 .search {
   grid-area: search;
 }
 
-.search__icon{
+.search__icon {
   transition: fill 0.2s;
 }
 
-.search__icon:hover{
-  fill: #01BCB5;
+.search__icon:hover {
+  fill: #01bcb5;
 }
-.search__icon:active{
-  fill: #01928D;
+.search__icon:active {
+  fill: #01928d;
+}
+
+/* Main */
+
+.main {
+  display: grid;
+  /* grid-template-rows: 3fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  grid-template-areas: 'slider-arrows healthy thirsty thirsty'
+                       'slider-arrows healthy slider-dots orange'
+                       'freashy healthy slider-dots orange'; */
+  grid-template:
+    "slider-arrows healthy thirsty thirsty" 3fr
+    "slider-arrows healthy slider-dots orange" 1fr
+    "freashy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;
+}
+
+/* Slider arrows */
+
+.slider-arrows {
+  grid-area: slider-arrows;
+  position: relative;
+}
+
+.slide-arrows__items-wrapper {
+  width: 100%;
+  height: 100%;
+
+  filter: brightness(80%);
+
+  display: flex;
+}
+
+
+.slider-arrows__nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transform: translateY(-50%);
+}
+.slider-arrows__arrow {
+  color: #fff;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+
+  transition: opacity 0.2s;
+}
+
+.slider-arrows__arrow:hover {
+  opacity: 0.8;
+}
+
+.slider-arrows__arrow:active {
+  opacity: 0.6;
+}
+
+
+
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  opacity: 0.6;
+}
+
+/* Slider dots */
+
+.slider-dots {
+  grid-area: slider-dots;
+  position: relative;
+}
+
+
+.slider-dots__items-wrapper{
+  width: 100%;
+  height: 100%;
+
+  filter: brightness(80%);
+
+  display: flex;
+}
+
+
+
+.slider-dots_btn-wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slider-dots__nav {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+
+}
+
+.slider-dots__nav-item {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+
+  transition: 0.2s opacity;
+}
+
+.slider-dots__nav-item:hover{
+  opacity: 0.8;
+}
+
+.slider-dots__nav-item:active{
+  opacity: 0.6;
+}
+
+.slider-dots__nav-item--active {
+  background-color: transparent;
+  border: 1px solid #fff;
 }
