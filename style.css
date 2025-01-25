@@ -518,6 +518,9 @@ body {
   background-color: #01BCB5;
 }
 
+.sidebar .title{
+  width: 100px;
+}
 
 .btn--rounded {
   border-radius: 20px;
@@ -527,4 +530,44 @@ body {
 
 .sidebar p + .btn{
   margin-top: 20px;
+}
+
+@media (max-width: 1300px){
+  .footer{
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-areas: 'socials form logo'
+                          '. . copy';
+    padding-left: 5%;
+  }
+
+}
+
+@media (max-width: 1200px){
+  .main{
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: 'freashy freashy freashy healthy'
+                         'slider-arrows slider-arrows slider-arrows healthy'
+                         'thirsty thirsty thirsty thirsty'
+                         'slider-dots slider-dots orange orange';
+
+  }
+
+  .slider-arrows, .slider-dots, .orange{
+    height: 300px;
+  }
+
+  .wrapper-down{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'sidebar' 'footer';
+  }
+
+  .common--row-rev{
+    padding-right: 90px;
+  }
+
+  .sidebar .common_desc{
+    max-width: 200px;
+  }
 }
