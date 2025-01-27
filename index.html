@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="no-scroll">
     <div class="container">
-      <header class="header">
+      <header class="header header--mobile">
         <h1 class="logo">ORGANIC JUICY CO.</h1>
 
         <nav class="header__nav">
@@ -22,7 +22,11 @@
           </ul>
         </nav>
 
-        <button class="search">
+        <button type="button" class="menu-icon menu-icon--active">
+          <div class="menu-icon__line"></div>
+        </button>
+
+        <button type="button" class="search">
           <!-- ! Try with svg -->
           <svg
             class="search__icon"
@@ -152,5 +156,6 @@
 
     </div>
 
+    <script src="script.js"></script>
   </body>
 </html>
